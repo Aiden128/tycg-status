@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #111111;
+  --bg-card: #1a1a1a;
+  --bg-hover: #222222;
+  --border-color: #2a2a2a;
+  --text-primary: #f0f0f0;
+  --text-secondary: #a0a0a0;
+  --text-muted: #606060;
+  --green: #22c55e;
+  --green-dim: #166534;
+  --red: #ef4444;
+  --red-dim: #7f1d1d;
+  --yellow: #eab308;
+  --yellow-dim: #713f12;
+  --gray: #6b7280;
+  --gray-dim: #1f2937;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans TC',
+    'Microsoft JhengHei', sans-serif;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
+
+/* Utility classes */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.badge-up {
+  background: #052e16;
+  color: var(--green);
+  border: 1px solid #166534;
+}
+
+.badge-down {
+  background: #450a0a;
+  color: var(--red);
+  border: 1px solid #7f1d1d;
+}
+
+.badge-slow {
+  background: #422006;
+  color: var(--yellow);
+  border: 1px solid #713f12;
+}
+
+.badge-unknown {
+  background: var(--gray-dim);
+  color: var(--gray);
+  border: 1px solid #374151;
+}
+
+/* Pulse animation for live indicator */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Sparkline */
+.sparkline-bar {
+  display: inline-block;
+  width: 4px;
+  border-radius: 2px;
+  margin: 0 1px;
+}
